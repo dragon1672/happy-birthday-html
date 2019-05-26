@@ -11,7 +11,7 @@
             #message span {
                 cursor: pointer;
                 display: inline-block;
-                font-size: 100px;
+                font-size: 80px;
                 user-select: none;
                 line-height: .8;
             }
@@ -136,7 +136,7 @@
         <div style='margin:10px'>a wee bit late...but wanted to make ya something cool</div>
         <script>
             //setup message
-            var who = getUrlParam("who", "WonderfulPerson")
+            var who = getUrlParam("who", "Wonderful Person")
             var message = `Happy Birthday ${who}!`
             // Create Elements
             for (var i = 0; i < message.length; i++) {
@@ -146,7 +146,11 @@
                 }
 
                 let newLetter = document.createElement('span')
-                newLetter.innerHTML = message[i]
+                if (message[i] == ' ') {
+                    newLetter.innerHTML = "&nbsp;"
+                } else {
+                    newLetter.innerHTML = message[i]
+                }
                 newLetter.classList.add(getRandomAnimation())
 
                 let wordDiv = document.getElementById("message")
