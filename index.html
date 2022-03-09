@@ -133,11 +133,17 @@
     <body>
         <!-- Animations and idea from https://codepen.io/FlorinPop17/pen/WEBNyx made by https://florin-pop.com-->
         <div id="message"></div>
-        <div style='margin:10px'>a wee bit late...but wanted to make ya something cool</div>
+        <div style='margin:10px' id='sub'>a wee bit late...but wanted to make ya something cool</div>
         <script>
             //setup message
             var who = getUrlParam("who", "Wonderful Person")
-            var message = `Happy Birthday ${who}!`
+            var prefix = getUrlParam("message", "Happy Birthday")
+            var message = `${prefix} ${who}!`
+            
+            var subMessage = getUrlParam("sub","a wee bit late...but wanted to make something cool")
+            let subDiv = document.getElementById("sub")
+            subDiv.innerHTML = subMessage
+            
             // Create Elements
             for (var i = 0; i < message.length; i++) {
                 function getRandomAnimation() {
