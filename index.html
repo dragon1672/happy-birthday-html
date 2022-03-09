@@ -197,7 +197,7 @@
                 if (window.location.href.indexOf(parameter) > -1) {
                     urlparameter = getUrlVars()[parameter];
                 }
-                return urlparameter;
+                return decodeURI(urlparameter);
             }
         </script>
     </body>
